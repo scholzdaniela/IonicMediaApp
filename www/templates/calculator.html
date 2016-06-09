@@ -1,0 +1,118 @@
+﻿<ion-view view-title="Calculator" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Calculator <small>{{title}} - Advertisements</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+            <div class="col">
+                <form name="daily_adv_Form" ng-submit="calculate(calc)">
+
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Edition</span>
+                            <ion-checkbox name="publication"  ng-repeat="publication in publications" ng-model="calcpublication[publication.id]">{{publication.name}}</ion-checkbox>
+
+                        </label>
+
+                        <div class="button-bar padding row item">
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Special Format</span>
+                                <ion-radio name="adtype" ng-repeat="adtype in types" ng-value="adtype.id"  ng-model="calc.adtype">{{adtype.name}}</ion-radio>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Width in columns</span>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'1'">1</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'2'">2</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'3'">3</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'4'">4</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'5'">5</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'6'">6</ion-radio>
+                                <ion-radio name="width" ng-model="calc.width" ng-value="'7'">7</ion-radio>
+                            </label>
+                        </div>
+
+                        <div class="button-bar padding row item">
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Height:</span>
+                                <input type="text" class="form-control" id="height" placeholder="height" ng-model="calc.height">
+                            </label>
+                        </div>
+                            <div class="button-bar padding row item">
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Color:</span>
+                                    <ion-radio name="color" ng-repeat="color in colors" ng-value="color.id" ng-model="calc.color">{{color.name}}</ion-radio>
+                                </label>
+                            </div>
+
+                            <div class="button-bar padding row item">
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Pricelist:</span>
+                                    <ion-radio name="pricetype" ng-repeat="pricetype in pricetypes" ng-value="pricetype.id" ng-model="calc.pricetype">{{pricetype.name}} pricelist</ion-radio>
+                                </label>
+                            </div>
+
+                            <div class="button-bar padding row item">
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Days of publication:</span>
+                                    <input type="text" class="form-control" id="days" placeholder="1" ng-model="calc.days">
+                                </label>
+                            </div>
+
+                            <div class="button-bar padding row item">
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Discount:</span>
+                                    <input type="text" class="form-control" id="discount" placeholder="10 = 10%" ng-model="calc.discount">
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                </form>
+            </div>
+            <!-- /.col-->
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="alert alert-info" role="alert" ng-if="total != 0">{{total}} Euro</div>
+                </div>
+            </div>
+            
+
+            
+
+
+
+        </div>
+    </ion-content>
+</ion-view>

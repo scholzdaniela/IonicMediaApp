@@ -1,0 +1,82 @@
+﻿<ion-view view-title="New Scribble" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Scribble
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+
+            <div id="zwibbler" style="margin-left:10px;margin-right:10px;border:2px solid red;width:100%;height:600px;"></div>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" type="button" ng-click="save()" value="Save">Save as PNG</button>
+
+            <!--<button id="loadButton" class="btn btn-primary" type="button" onclick="onLoad()" disabled="disabled" value="Load">Laden</button>-->
+
+            <button class="btn btn-primary" type="button" ng-click="onImage()" value="Open as image">Open as image</button>
+            <!--<button class="btn btn-primary" type="button" onclick="zwibbler.onResize()" value="Open as image">Open as image</button>-->
+            <p class="text-success" ng-if="saved == true">Saved as {{savedas}}</p>
+            <p ng-if="saved == false">{{savedas}}</p>
+        </div>
+           
+            <!--<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://zwibbler.com/zwibbler-demo.js""></script>-->
+            <!--
+        <script type="text/javascript">
+            var zwibbler = Zwibbler.create("zwibbler", {
+                showPropertyPanel: true
+            });
+
+            var saved = null;
+            function onSave() {
+                //saved = zwibbler.save("zwibbler3");
+                var dataUrl = zwibbler.save("png");
+
+            }
+
+            function onLoad() {
+                zwibbler.load("zwibbler3", saved);
+            }
+
+            function onImage() {
+                var dataUrl = zwibbler.save("png");
+                window.open(dataUrl, "other");
+            }
+
+
+        </script>
+        -->
+
+
+
+</ion-content>
+</ion-view>

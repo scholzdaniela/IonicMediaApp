@@ -1,0 +1,98 @@
+﻿<ion-view view-title="Consultant Main" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Consultant Area <small>Overview</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+
+            <div class="card">
+                <div class="item item-divider">
+                    <div class="huge">Customer</div>
+                </div>
+
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.customer'>
+                        Customer Overview
+                    </a>
+                </div>
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.customer_new'>
+                        New Customer
+                    </a>
+                </div>
+            </div>
+            <div class="card" >
+                <div class="item item-divider">
+                    <div class="huge">Notes</div>
+                </div>
+
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.notes'>
+                        Notes
+                    </a>
+                </div>
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.notes_new'>
+                        New Note
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="item item-divider">
+                    <div class="huge">Scribble</div>
+                </div>
+
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.consultant_newscribble'>
+                        New Scribble
+                    </a>
+                </div>
+                <div class="item item-divider">
+                    <a ui-sref='consultantarea.scribbles'>
+                        Saved Scribbles
+                    </a>
+                </div>
+            </div>
+            
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,103 @@
+
+
+.fullscreen {
+  width: 100% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.login {
+    background-color: #222;
+}
+
+.login h2{
+    margin-left:  30%;
+    margin-right: 30%;
+	color: white;
+}
+
+.login h1{
+    margin-left:  30%;
+    margin-right: 30%;
+	color: #9d9d9d;
+	margin-top: 40px;
+}
+
+
+#login-list {
+    margin-left:  30%;
+    margin-right: 30%;
+	color: white;
+}
+
+#login-button{
+    margin-left:  30%;
+    margin-right: 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+	background-color: #337ab7;
+	color: white;
+}
+
+a {
+	color: #9d9d9d;
+	text-decoration: none;
+	
+}
+
+.tabs {
+	justify-content: left;
+	background-color: #222;
+}
+
+/*header bar title tab items */
+.tab-item{
+	color: #9d9d9d;
+	font-size: 17px;
+}
+
+
+.sidebar{
+	border: 0px;
+	border-bottom-style: none;
+	padding-left: 24px;
+	background-color: #222;
+	border-color: #222;
+	color: #9d9d9d;
+}
+
+/*right sidebar first item */
+.item-complex .item-content{
+	
+	background-color: #222;
+	border-color: #222;
+	color: #9d9d9d;
+	padding-left: 0;
+}
+
+.bar.bar-stable .title{
+	color: #9d9d9d;
+}
+.bar .title a{
+	color: #9d9d9d;
+}
+
+/* header username button for right side menu*/
+.bar-stable .button.button-clear{
+	color: #9d9d9d;
+}
+
+body{
+	background-color: #222;
+	color: #9d9d9d;
+}
+
+.menu{
+	background-color: #222;
+}
+
+.bar.bar-stable{
+	background-color: #222;
+}

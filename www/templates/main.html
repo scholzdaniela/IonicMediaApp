@@ -1,0 +1,66 @@
+﻿<ion-view view-title="Main" hide-nav-bar="false">
+    <ion-nav-title>
+        
+      <div class="tabs"  >
+          
+              <a class="tab-item" ui-sref='mediadata.overview'>
+                  Mediadata
+              </a>
+              <a class="tab-item" ui-sref='consultantarea.overview'>
+                  Consultant Area
+              </a>
+              <a class="tab-item" ui-sref='calculator.overview'>
+                  Calculator
+              </a>
+              <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                  Administrator
+              </a>
+  
+          </div>
+      
+        
+        
+       
+
+
+       
+
+      
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Mediadata <small>Overview</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+            <div class="card" ng-repeat="product in products">
+                <div class="item item-divider">
+                    <div class="huge">{{product.name}}</div>
+                </div>
+                
+                <div class="item item-divider">
+                    <div ng-controller="DocumentsController">
+
+                        <div ng-repeat="document in documents">
+
+                            <a ui-sref='mediadata.{{document.id}}'>
+                                <span class="left">{{document.name}}</span>
+                                <div class="clearfix"></div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </ion-content>
+</ion-view>

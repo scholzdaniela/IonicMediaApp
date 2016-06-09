@@ -1,0 +1,21 @@
+﻿<nav ng-class="getNavStyle(scroll)">
+    <button ng-click="zoomIn()">+</span></button>
+    <button ng-click="fit()">100%</span></button>
+    <button ng-click="zoomOut()">-</span></button>
+    <!--
+    <span>Document URL: </span>
+    <input type="text" ng-model="pdfUrl">
+    -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="sendMail('pdf', container_name, filename)">
+        <i class="icon ion-android-mail"></i>
+    </button>
+    <button style="margin-top:5px" data-action="share" data-href="{{pdfUrl}}" data-height="24">
+        <i class="icon ion-social-googleplus"></i>
+    </button>
+
+</nav>
+<hr>
+{{loading}}
+<canvas id="pdf" class="rotate0"></canvas>

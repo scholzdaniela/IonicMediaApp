@@ -1,0 +1,83 @@
+﻿<ion-view view-title="Profile" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {{title}} <small>{{username}}</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+            <div class="col">
+                <form name="profile_Form" ng-submit="editUser(user)" role="form">
+                    <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">username</span>
+                        <input type="text" class="form-control" id="username" placeholder="{{username}}" ng-model="user.username" required>
+                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">username is required</span>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">firstname</span>
+                        <input type="text" class="form-control" id="firstname" placeholder="{{firstname}}" ng-model="user.firstname" required>
+                        <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">firstname is required</span>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">lastname</span>
+                        <input type="text" class="form-control" id="lastname" placeholder="{{lastname}}" ng-model="user.lastname" required>
+                        <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">lastname is required</span>
+                   </label>
+                   <label class="item item-input item-stacked-label">
+                        <span class="input-label">email</span>
+                       <input type="email" class="form-control" id="email" placeholder="{{email}}" ng-model="user.email" required>
+                       <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required</span>
+                   </label> 
+                </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Save Changes</button>
+                    </div>
+                </form>
+
+                <div class="alert alert-info" role="alert" ng-if="savedstatus != ''">
+                    {{savedstatus}}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row hidden">
+
+            <div class="col-lg-3 col-md-6">
+                <button type="button" class="btn btn-warning" onclick="resetPassword()">Send mail to reset password</button>
+            </div>
+
+        </div>
+
+
+    </ion-content>
+</ion-view>

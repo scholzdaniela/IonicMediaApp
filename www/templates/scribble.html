@@ -1,0 +1,70 @@
+﻿<ion-view view-title="Scribble List" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {{title}} <small>Overview</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="scribble in scribbles">
+                        <a ng-click="showDetail(scribble.name)">{{scribble.name}}</a>
+                        <button type="button" class="btn btn-danger btn-xs pull-right" ng-click="deleteIt(scribble.name)">
+                            <i class="icon ion-android-delete"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col" ng-if="showDetail == true">
+                <div class="row">
+                    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                    <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="sendMail('png', filename)">
+                        <i class="icon ion-android-mail"></i>
+                    </button>
+                    <button  style="margin-top:5px" data-action="share" data-href="{{imageurl}}" data-height="24">
+                        <i class="icon ion-social-googleplus"></i>
+                    </button>
+                </div>
+
+
+                <div class="row">
+
+                    <img src="{{imageurl}}" alt=".." class="img-rounded">
+
+                </div>
+            </div>
+           
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+﻿<ion-modal-view ng-controller="MailController">
+    <ion-header-bar>
+        <h1 class="title">Send Mail</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form name="form" ng-submit="sendingMail(mailoptions)" role="form">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Receiver</span>
+                    <input type="email" name="receiver" id="receiver" class="form-control" ng-model="mailoptions.receiver" required />
+                    <span ng-show="form.receiver.$dirty && form.receiver.$error.required" class="help-block">Receiver is required</span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">contactName</span>
+                    <input type="text" name="contactName" id="contactName" class="form-control" ng-model="mailoptions.contactName" required />
+                    <span ng-show="form.contactName.$dirty && form.contactName.$error.required" class="help-block">contactName is required</span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">messageText</span>
+                    <textarea name="messageText" id="messageText" class="form-control" ng-model="mailoptions.messageText"> </textarea>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Send</button>
+                <button type="button" class="btn btn-default" ng-click="closeModal()">Close</button>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-modal-view>

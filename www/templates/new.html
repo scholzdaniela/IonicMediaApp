@@ -1,0 +1,120 @@
+﻿<ion-view view-title="Consultant New" hide-nav-bar="false">
+    <ion-nav-title>
+
+        <div class="tabs">
+
+            <a class="tab-item" ui-sref='mediadata.overview'>
+                Mediadata
+            </a>
+            <a class="tab-item" ui-sref='consultantarea.overview'>
+                Consultant Area
+            </a>
+            <a class="tab-item" ui-sref='calculator.overview'>
+                Calculator
+            </a>
+            <a ng-if="isAdmin" class="tab-item" ui-sref='admin.overview'>
+                Administrator
+            </a>
+
+        </div>
+
+    </ion-nav-title>
+
+
+    <ion-content>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {{title}} <small>Add new one</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+
+            <div class="col" ng-if="title=='Notes'">
+                <!-- form for notes -->
+                <form name="add_Form" ng-submit="addNote()" role="form">
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Name</span>
+                            <input type="text" class="form-control" id="name" placeholder="" ng-model="note.name" required>
+                            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Name is required</span>
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Content</span>
+                            <input type="text" class="form-control" id="content" placeholder="" ng-model="note.content" required>
+                            <span ng-show="form.content.$dirty && form.content.$error.required" class="help-block">Content is required</span>
+                        </label>
+                    </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Submit</button>
+                        </div>
+                </form>
+            </div>
+
+            <div class="col" ng-if="title=='Customers'">
+                <!-- form for customer -->
+                <form name="add_Form" ng-submit="addCustomer()" role="form">
+
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Name</span>
+                            <input type="text" class="form-control" id="name" placeholder="" ng-model="customer.name">
+                            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Name is required</span>
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Contact Person</span>
+                            <input type="text" class="form-control" id="contact_person" placeholder="" ng-model="customer.contact_person">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Mobile</span>
+                            <input type="text" class="form-control" id="mobile" placeholder="" ng-model="customer.mobile">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Phone</span>
+                            <input type="text" class="form-control" id="phone" placeholder="" ng-model="customer.phone">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address Name</span>
+                            <input type="text" class="form-control" id="address_name" placeholder="" ng-model="customer.address_name">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address Street</span>
+                            <input type="text" class="form-control" id="address_street" placeholder="" ng-model="customer.address_street">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address ZIP</span>
+                            <input type="text" class="form-control" id="address_zip" placeholder="" ng-model="customer.address_zip">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address City</span>
+                            <input type="text" class="form-control" id="address_city" placeholder="" ng-model="customer.address_city">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address Country</span>
+                            <input type="text" class="form-control" id="content" placeholder="" ng-model="customer.address_country">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Information</span>
+                            <input type="text" class="form-control" id="information" placeholder="" ng-model="customer.information">
+                        </label>
+
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col" ng-if="status!=''">
+            </div>
+            
+
+
+        </div>
+    </ion-content>
+</ion-view>

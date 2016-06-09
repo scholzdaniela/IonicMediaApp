@@ -1,0 +1,34 @@
+﻿<ion-view view-title="Sidebar-Mediadata" hide-nav-bar="false">
+
+    <ion-content>
+        <ion-list>
+            <ion-item menu-close ng-click="login()">
+                Login
+            </ion-item>
+            <ion-item menu-close href="#/app/search">
+                Search
+            </ion-item>
+            <ion-item menu-close href="#/app/browse">
+                Browse
+            </ion-item>
+            <ion-item menu-close href="#/app/playlists">
+                Playlists
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ul class="nav navbar-nav side-nav">
+
+        <li ng-repeat="product in navproducts">
+            <a class="a-sidebar" href="javascript:;" data-toggle="collapse" data-target="#{{product.id}}"> {{product.name}} <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="{{product.id}}" class="collapse nav navbar-nav ">
+                <div ng-controller="DocumentsController">
+                    <li class="list-sidebar" ng-repeat="document in documents">
+                        <a ui-sref="app.mediadata.{{document.id}}" class="a-sidebar">{{document.name}}</a>
+                    </li>
+                </div>
+
+            </ul>
+        </li>
+    </ul>
+</ion-view>
